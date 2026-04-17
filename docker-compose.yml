@@ -13,5 +13,20 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASS}
 
+  mqtt:
+    image: eclipse-mosquitto:latest
+    container_name: sslms_mqtt
+    restart: always
+    ports:
+      - "1883:1883"     # MQTT default port
+      - "9001:9001"     # WebSocket support (optional)
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+      - mosquitto_config:/mosquitto/config
+
 volumes:
   mongodb_data:
+  mosquitto_data:
+  mosquitto_log:
+  mosquitto_config:

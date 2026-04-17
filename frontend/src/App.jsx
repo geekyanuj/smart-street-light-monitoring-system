@@ -5,6 +5,7 @@ import MapView from "./pages/MapView";
 import Analytics from "./pages/Analytics";
 import LiveSensors from "./pages/LiveSensors";
 import DeviceDetails from "./pages/DeviceDetails";
+import Settings from "./pages/Settings";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
         <Route
@@ -62,6 +63,14 @@ export default function App() {
           element={
             <DashboardLayout>
               <LiveSensors />
+            </DashboardLayout>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <DashboardLayout>
+              <Settings />
             </DashboardLayout>
           }
         />
